@@ -19,16 +19,5 @@ $b-brand-border: 1px solid #000;
 @import 'box-sizing';
 @import 'reset';
 @import 'double-container';
-
-.header {
-  background: $c-brand-navy;
-}
-
-.top-nav {
-  font-family: 'Special Elite', cursive;
-
-  &__logo {
-    margin: $m-gutter / 2;
-    color: $c-brand-white;
-  }
-}
+@import 'header';
+@import 'grid';
