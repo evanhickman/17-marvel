@@ -1,0 +1,17 @@
+.content {
+  margin-top: $m-gutter;
+}
+
+.get-bigger {
+  flex-grow: 1;
+}
+
+.issues {
+  margin-top: $m-gutter * 2;
+}
+
+.heading {
+  margin-top: 0;
+  border-bottom: $b-brand-border;
+  font-family: $c-brand-font-special;
+}
