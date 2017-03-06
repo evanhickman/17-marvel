@@ -6,7 +6,8 @@
   font-family: 'Special Elite', cursive;
 
   &__logo {
-    margin: $m-gutter / 2;
+    margin: 0.6rem;
     color: $c-brand-white;
+    font-size: 2rem;
   }
 }

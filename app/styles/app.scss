@@ -21,3 +21,13 @@ $b-brand-border: 1px solid #000;
 @import 'layout';
 @import 'header';
 @import 'content';
+
+// @media (max-width: 600) {
+//   .thumbnail-grid {
+//     flex-direction: column;
+//
+//     &__item {
+//       flex-basis: auto;
+//     }
+//   }
+// }

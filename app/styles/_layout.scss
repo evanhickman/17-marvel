@@ -1,0 +1,27 @@
+.section {
+  padding: $m-gutter;
+}
+
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: -$m-gutter;
+
+  &__item {
+    margin: $m-gutter;
+  }
+}
+
+.thumbnail-grid {
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__item {
+    flex-basis: calc(100% / 4 - 2rem);
+  }
+}
