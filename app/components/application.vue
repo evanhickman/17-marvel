@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import Store from '../store.js';
+import store from '../store.js';
 import { seriesInfoSearch } from '../actions.js';
 
 export default {
