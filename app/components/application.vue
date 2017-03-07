@@ -10,7 +10,7 @@
     <div class="section content">
       <div class="container">
         <main class="grid">
-          <div class="grid__item">
+          <div v-if="series" class="grid__item">
             <div><img src="http://placehold.it/250/2c3e50" alt="" class="series__image"></div>
             <h3 class="series__name">Apocalypse (2004 - 2009)</h3>
             <p class="series__years">2004 - 2009</p>
@@ -84,19 +84,19 @@ import store from '../store.js';
 import { seriesInfoSearch } from '../actions.js';
 
 export default {
-  components: {
-    seriesInfo,
-    characters,
-    comics,
+
+  data() {
+    return {
+      series: this.$select('seriesInfo'),
+      characters: this.$select('characterData'),
+      comics: this.$select('comicData'),
+    };
   },
 
   created() {
     store.dispatch(seriesInfoSearch());
   },
 
-  data() {
-    return {};
-  },
 
   methods: {
 
