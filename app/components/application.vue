@@ -11,7 +11,6 @@
       <div class="container">
         <main class="grid">
           <div class="grid__item">
-            <!-- stuff on the left -->
             <div><img src="http://placehold.it/250/2c3e50" alt="" class="series__image"></div>
             <h3 class="series__name">Apocalypse (2004 - 2009)</h3>
             <p class="series__years">2004 - 2009</p>
@@ -22,7 +21,6 @@
             <p class="series__creator">Carly Rae Jepson</p>
           </div>
           <div class="grid__item get-bigger">
-            <!-- stuff on right -->
               <h2 class="heading">Characters</h2>
               <div class="grid thumbnail-grid">
                 <div class="grid__item thumbnail-grid__item">
@@ -82,6 +80,8 @@
 </template>
 
 <script>
+import Store from '../store.js';
+
 export default {
   data() {
     return {};
