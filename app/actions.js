@@ -14,18 +14,18 @@ export function charactersFindAllComplete(data) {
 
 export function seriesInfoSearch(name) {
   return (dispatch) => {
-    fetch(`http://marvel-is-broke.herokuapp.com/series?limit=1&titleStartsWith=${spider}`)
+    fetch(`http://marvel-is-broke.herokuapp.com/series?limit=1&titleStartsWith=${name}`)
     .then(res => res.json())
     .then((data) => {
     });
     dispatch(seriesInfoLoadComplete(name));
-    dispatch(comicsFindForId(id));
+    dispatch(comicsFindForId());
   };
 }
 
 export function charactersFindForId(id) {
   return (dispatch) => {
-    fetch(`http://marvel-is-broke.herokuapp.com/series?limit=1&titleStartsWith=${spider}`)
+    fetch(`http://marvel-is-broke.herokuapp.com/series?limit=1&titleStartsWith=${name}`)
     .then(res => res.json())
     .then((data) => {
       const characters = data.data.results;

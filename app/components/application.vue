@@ -94,7 +94,7 @@ export default {
   },
 
   created() {
-    store.dispatch(seriesInfoSearch());
+    store.dispatch(seriesInfoSearch('Thor'));
   },
 
 
