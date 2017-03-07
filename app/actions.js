@@ -17,6 +17,7 @@ export function seriesInfoSearch(name) {
     fetch(`http://marvel-is-broke.herokuapp.com/series?limit=1&titleStartsWith=${name}`)
     .then(res => res.json())
     .then((data) => {
+      debugger;
     });
     dispatch(seriesInfoLoadComplete(name));
     dispatch(comicsFindForId());
