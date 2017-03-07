@@ -17,11 +17,11 @@ export function seriesInfoSearch(name) {
     fetch(`http://marvel-is-broke.herokuapp.com/series?limit=1&titleStartsWith=${name}`)
     .then(res => res.json())
     .then((data) => {
-      debugger;
+      // debugger;
     });
-    dispatch(seriesInfoLoadComplete(name));
-    dispatch(comicsFindForId());
   };
+  dispatch(seriesInfoLoadComplete(name));
+  dispatch(comicsFindForId());
 }
 
 export function charactersFindForId(id) {
