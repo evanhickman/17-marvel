@@ -81,8 +81,19 @@
 
 <script>
 import Store from '../store.js';
+import { seriesInfoSearch } from '../actions.js';
 
 export default {
+  components: {
+    seriesInfo,
+    characters,
+    comics,
+  },
+
+  created() {
+    store.dispatch(seriesInfoSearch());
+  },
+
   data() {
     return {};
   },
