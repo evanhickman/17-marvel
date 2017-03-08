@@ -1,10 +1,9 @@
 <template lang="html">
   <div class="">
-    <h2 class="heading">Characters</h2>
     <div v-if="characterData" class="grid thumbnail-grid">
       <div class="grid__item thumbnail-grid__item">
         <div class="box-small"><img :src="`${characterData[0].thumbnail.path}.${characterData[0].thumbnail.extension}`" alt="" class="thumbnail"></div>
-        <h4 class="thumbnail__caption">{{characterData[0].name}}</h4>
+        <h4 class="thumbnail__caption">{{character.name}}</h4>
       </div>
       <div class="grid__item thumbnail-grid__item">
         <div class="box-small"><img :src="`${characterData[1].thumbnail.path}.${characterData[1].thumbnail.extension}`" alt="" class="thumbnail"></div>
@@ -24,13 +23,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-    };
-  },
-
-  methods: {
-
-  },
+  props: ['character'],
 };
 </script>

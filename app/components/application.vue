@@ -21,7 +21,9 @@
             <p class="series__creator">{{seriesInfo.creators.items[3].name}}</p>
           </div>
           <div class="grid__item get-bigger">
-              <character-item></character-item>
+            <h2 class="heading">Characters</h2>
+              <character-item v-for="character in characterData"
+                v-bind:character="character"></character-item>
               <h2 class="heading issues-heading">Issues</h2>
               <div class="grid thumbnail-grid">
                 <div class="grid__item thumbnail-grid__item issue">
