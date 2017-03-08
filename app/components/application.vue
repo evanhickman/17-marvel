@@ -29,19 +29,29 @@
               <h2 class="heading issues-heading">Issues</h2>
               <div class="grid thumbnail-grid">
                 <issue-item v-for="issue in issueData"
-                v-bind:issue="issue" class="grid__item thumbnail-grid__item"></issue-item>
+                v-bind:issue="issue" v-on:toggle="showModal" class="grid__item thumbnail-grid__item">
+                </issue-item>
               </div>
             </div>
           </div>
         </main>
       </div>
+      <div class="modal_open" tabindex="0" v-on:keyup.esc="closeModal" v-if="modal">
+          <div class="modal">
+            <div class="container">
+              <div class="card">
+                <button class="close" v-on:click="closeModal">Close</button>
+                <h2>{{modal.description}}</h2>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
-  </div>
 </template>
 
 <script>
 import store from '../store.js';
-import { seriesInfoSearch } from '../actions.js';
+import { seriesInfoSearch, modalSet, modalClear } from '../actions.js';
 
 import CharacterItem from './character-item.vue';
 import IssueItem from './issue-item.vue';
@@ -56,17 +66,23 @@ export default {
       seriesInfo: this.$select('seriesInfo'),
       characterData: this.$select('characterData'),
       issueData: this.$select('issueData'),
+      modal: this.$select('modal'),
     };
   },
 
   created() {
-    store.dispatch(seriesInfoSearch('Thor'));
+    store.dispatch(seriesInfoSearch('Hulk'));
   },
 
 
   methods: {
+    showModal(info) {
+      store.dispatch(modalSet(info));
+    },
 
-
+    closeModal() {
+      store.dispatch(modalClear());
+    }
   },
 };
 </script>

@@ -19,7 +19,6 @@
 
 .thumbnail-grid {
   flex-wrap: wrap;
-  justify-content: space-between;
 
   &__item {
     flex-basis: calc(100% / 4 - 2rem);

@@ -89,3 +89,29 @@
     background: lighten($c-brand-navy, 5);
   }
 }
+
+.modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: $c-brand-modal-bg;
+  font-size: 0.8rem;
+}
+
+.card {
+  background: $c-brand-white;
+}
+
+.close {
+  width: 100%;
+  padding: 1rem;
+  border: 0;
+  outline: 0;
+  background: $c-brand-red;
+  color: $c-brand-white;
+}
