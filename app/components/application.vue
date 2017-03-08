@@ -22,38 +22,14 @@
           </div>
           <div class="grid__item get-bigger">
             <h2 class="heading">Characters</h2>
+            <div class="grid thumbnail-grid">
               <character-item v-for="character in characterData"
-                v-bind:character="character"></character-item>
+                v-bind:character="character" class="grid__item thumbnail-grid__item"></character-item>
+            </div>
               <h2 class="heading issues-heading">Issues</h2>
               <div class="grid thumbnail-grid">
-                <div class="grid__item thumbnail-grid__item issue">
-                  <div class="box-small"><img :src="`${issueData[0].thumbnail.path}.${issueData[0].thumbnail.extension}`" alt="" class="thumbnail"></div>
-                  <h4 class="thumbnail__caption">#{{issueData[0].issueNumber}}</h4>
-                  <p class="thumbnail__details">{{issueData[0].title}}</p>
-                  <!-- <p class="thumbnail__details">{{issueData[].issueNumber}}</p> -->
-                  <button class="button" v-on:click="">Read More</button>
-                </div>
-                <div class="grid__item thumbnail-grid__item issue">
-                  <div class="box-small"><img :src="`${issueData[1].thumbnail.path}.${issueData[1].thumbnail.extension}`" alt="" class="thumbnail"></div>
-                  <h4 class="thumbnail__caption">#{{issueData[1].issueNumber}}</h4>
-                  <p class="thumbnail__details">{{issueData[1].title}}</p>
-                  <!-- <p class="thumbnail__details">(2004)#1</p> -->
-                  <button class="button" v-on:click="">Read More</button>
-                </div>
-                <div class="grid__item thumbnail-grid__item issue">
-                  <div class="box-small"><img :src="`${issueData[2].thumbnail.path}.${issueData[2].thumbnail.extension}`" alt="" class="thumbnail"></div>
-                  <h4 class="thumbnail__caption">#{{issueData[2].issueNumber}}</h4>
-                  <p class="thumbnail__details">{{issueData[2].title}}</p>
-                  <!-- <p class="thumbnail__details">(2004)#1</p> -->
-                  <button class="button" v-on:click="">Read More</button>
-                </div>
-                <div class="grid__item thumbnail-grid__item issue">
-                  <div class="box-small"><img :src="`${issueData[3].thumbnail.path}.${issueData[3].thumbnail.extension}`" alt="" class="thumbnail"></div>
-                  <h4 class="thumbnail__caption">#{{issueData[3].issueNumber}}</h4>
-                  <p class="thumbnail__details">{{issueData[3].title}}</p>
-                  <!-- <p class="thumbnail__details">(2004)#1</p> -->
-                  <button class="button" v-on:click="">Read More</button>
-                </div>
+                <issue-item v-for="issue in issueData"
+                v-bind:issue="issue" class="grid__item thumbnail-grid__item"></issue-item>
               </div>
             </div>
           </div>
@@ -68,10 +44,12 @@ import store from '../store.js';
 import { seriesInfoSearch } from '../actions.js';
 
 import CharacterItem from './character-item.vue';
+import IssueItem from './issue-item.vue';
 
 export default {
   components: {
     CharacterItem,
+    IssueItem,
   },
   data() {
     return {
