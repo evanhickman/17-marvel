@@ -1,0 +1,117 @@
+.content {
+  margin-top: $m-gutter;
+}
+
+.get-bigger {
+  flex-grow: 1;
+}
+
+.issues {
+  margin-top: $m-gutter * 2;
+}
+
+.heading {
+  margin-top: 0;
+  border-bottom: $b-brand-border;
+  font-family: $c-brand-font-special;
+}
+
+.creators-heading {
+  margin: 2rem 0 0.8rem;
+}
+
+.series__name {
+  margin: ($m-gutter / 2) 0;
+}
+
+.series__creator {
+  margin: ($m-gutter / 2) 0;
+}
+
+.box {
+  position: relative;
+  width: 250px;
+
+  &::before {
+    display: block;
+    padding-top: 100%;
+    content: '';
+  }
+}
+
+.series__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 0.3rem;
+}
+
+.box-small {
+  position: relative;
+  width: 100%;
+  border-radius: 0.3rem;
+  overflow: hidden;
+
+  &::before {
+    display: block;
+    padding-top: 100%;
+    content: '';
+  }
+}
+
+.thumbnail {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.issues-heading {
+  margin-top: 2rem;
+}
+
+.button {
+  width: 100%;
+  height: 2rem;
+  border: 0;
+  border-radius: 0.2rem;
+  outline: 0;
+  background: $c-brand-navy;
+  color: $c-brand-white;
+
+  &:active {
+    background: lighten($c-brand-navy, 5);
+  }
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: $c-brand-modal-bg;
+  font-size: 0.8rem;
+}
+
+.card {
+  background: $c-brand-white;
+}
+
+.close {
+  width: 100%;
+  padding: 1rem;
+  border: 0;
+  outline: 0;
+  background: $c-brand-red;
+  color: $c-brand-white;
+}

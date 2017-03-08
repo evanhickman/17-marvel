@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  color: $c-brand-dark-gray;
+  font-family: $c-brand-font-reg;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+img {
+  align-self: center;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}

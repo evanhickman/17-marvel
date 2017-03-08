@@ -1,0 +1,13 @@
+.header {
+  background: $c-brand-navy;
+}
+
+.top-nav {
+  font-family: 'Special Elite', cursive;
+
+  &__logo {
+    margin: 0.6rem;
+    color: $c-brand-white;
+    font-size: 2rem;
+  }
+}
