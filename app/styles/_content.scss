@@ -28,7 +28,23 @@
   margin: ($m-gutter / 2) 0;
 }
 
+.box {
+  position: relative;
+  width: 250px;
+
+  &::before {
+    display: block;
+    padding-top: 100%;
+    content: '';
+  }
+}
+
 .series__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   border-radius: 0.3rem;
 }
 
