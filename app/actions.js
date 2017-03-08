@@ -45,7 +45,7 @@ export function charactersFindForId(id) {
 
 export function issuesFindForId(id) {
   return (dispatch) => {
-    fetch(`http://marvel-is-broke.herokuapp.com/series/${id}/issues`)
+    fetch(`http://marvel-is-broke.herokuapp.com/series/${id}/comics`)
     .then(res => res.json())
     .then((data) => {
       const issues = data.data.results;

@@ -21,53 +21,35 @@
             <p class="series__creator">{{seriesInfo.creators.items[3].name}}</p>
           </div>
           <div class="grid__item get-bigger">
-              <h2 class="heading">Characters</h2>
-              <div v-if="characterData" class="grid thumbnail-grid">
-                <div class="grid__item thumbnail-grid__item">
-                  <div><img :src="`${characterData[0].thumbnail.path}.${characterData[0].thumbnail.extension}`" alt="" class="thumbnail"></div>
-                  <h4 class="thumbnail__caption">{{characterData[0].name}}</h4>
-                </div>
-                <div class="grid__item thumbnail-grid__item">
-                  <div><img :src="`${characterData[1].thumbnail.path}.${characterData[1].thumbnail.extension}`" alt="" class="thumbnail"></div>
-                  <h4 class="thumbnail__caption">{{characterData[1].name}}</h4>
-                </div>
-                <div class="grid__item thumbnail-grid__item">
-                  <div><img :src="`${characterData[2].thumbnail.path}.${characterData[2].thumbnail.extension}`" alt="" class="thumbnail"></div>
-                  <h4 class="thumbnail__caption">{{characterData[2].name}}</h4>
-                </div>
-                <div class="grid__item thumbnail-grid__item">
-                  <div><img :src="`${characterData[3].thumbnail.path}.${characterData[3].thumbnail.extension}`" alt="" class="thumbnail"></div>
-                  <h4 class="thumbnail__caption">{{characterData[3].name}}</h4>
-                </div>
-              </div>
+              <character-item></character-item>
               <h2 class="heading issues-heading">Issues</h2>
               <div class="grid thumbnail-grid">
                 <div class="grid__item thumbnail-grid__item issue">
-                  <div><img src="http://placehold.it/150/2c3e50" alt="" class="thumbnail"></div>
-                  <h4 class="thumbnail__caption">#1</h4>
-                  <p class="thumbnail__details">Spider Girl</p>
-                  <p class="thumbnail__details">(2004)#1</p>
+                  <div class="box-small"><img :src="`${issueData[0].thumbnail.path}.${issueData[0].thumbnail.extension}`" alt="" class="thumbnail"></div>
+                  <h4 class="thumbnail__caption">#{{issueData[0].issueNumber}}</h4>
+                  <p class="thumbnail__details">{{issueData[0].title}}</p>
+                  <!-- <p class="thumbnail__details">{{issueData[].issueNumber}}</p> -->
                   <button class="button" v-on:click="">Read More</button>
                 </div>
                 <div class="grid__item thumbnail-grid__item issue">
-                  <div><img src="http://placehold.it/150/2c3e50" alt="" class="thumbnail"></div>
-                  <h4 class="thumbnail__caption">#1</h4>
-                  <p class="thumbnail__details">Spider Girl</p>
-                  <p class="thumbnail__details">(2004)#1</p>
+                  <div class="box-small"><img :src="`${issueData[1].thumbnail.path}.${issueData[1].thumbnail.extension}`" alt="" class="thumbnail"></div>
+                  <h4 class="thumbnail__caption">#{{issueData[1].issueNumber}}</h4>
+                  <p class="thumbnail__details">{{issueData[1].title}}</p>
+                  <!-- <p class="thumbnail__details">(2004)#1</p> -->
                   <button class="button" v-on:click="">Read More</button>
                 </div>
                 <div class="grid__item thumbnail-grid__item issue">
-                  <div><img src="http://placehold.it/150/2c3e50" alt="" class="thumbnail"></div>
-                  <h4 class="thumbnail__caption">#1</h4>
-                  <p class="thumbnail__details">Spider Girl</p>
-                  <p class="thumbnail__details">(2004)#1</p>
+                  <div class="box-small"><img :src="`${issueData[2].thumbnail.path}.${issueData[2].thumbnail.extension}`" alt="" class="thumbnail"></div>
+                  <h4 class="thumbnail__caption">#{{issueData[2].issueNumber}}</h4>
+                  <p class="thumbnail__details">{{issueData[2].title}}</p>
+                  <!-- <p class="thumbnail__details">(2004)#1</p> -->
                   <button class="button" v-on:click="">Read More</button>
                 </div>
                 <div class="grid__item thumbnail-grid__item issue">
-                  <div><img src="http://placehold.it/150/2c3e50" alt="" class="thumbnail"></div>
-                  <h4 class="thumbnail__caption">#1</h4>
-                  <p class="thumbnail__details">Spider Girl</p>
-                  <p class="thumbnail__details">(2004)#1</p>
+                  <div class="box-small"><img :src="`${issueData[3].thumbnail.path}.${issueData[3].thumbnail.extension}`" alt="" class="thumbnail"></div>
+                  <h4 class="thumbnail__caption">#{{issueData[3].issueNumber}}</h4>
+                  <p class="thumbnail__details">{{issueData[3].title}}</p>
+                  <!-- <p class="thumbnail__details">(2004)#1</p> -->
                   <button class="button" v-on:click="">Read More</button>
                 </div>
               </div>
@@ -82,10 +64,13 @@
 <script>
 import store from '../store.js';
 import { seriesInfoSearch } from '../actions.js';
-// import SeriesInfo from '../reducer/series-info';
+
+import CharacterItem from './character-item.vue';
 
 export default {
-
+  components: {
+    CharacterItem,
+  },
   data() {
     return {
       seriesInfo: this.$select('seriesInfo'),
