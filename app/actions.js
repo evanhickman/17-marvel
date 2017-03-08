@@ -19,6 +19,19 @@ export function issueData(data) {
   };
 }
 
+export function modalSet(data) {
+  return {
+    type: 'MODAL@SET',
+    data
+  };
+}
+
+export function modalClear(data) {
+  return {
+    type: 'MODAL@CLEAR',
+  };
+}
+
 export function seriesInfoSearch(name) {
   return (dispatch) => {
     fetch(`http://marvel-is-broke.herokuapp.com/series?limit=1&titleStartsWith=${name}`)
