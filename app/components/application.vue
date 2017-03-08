@@ -22,22 +22,22 @@
           </div>
           <div class="grid__item get-bigger">
               <h2 class="heading">Characters</h2>
-              <div class="grid thumbnail-grid">
+              <div v-if="characterData" class="grid thumbnail-grid">
                 <div class="grid__item thumbnail-grid__item">
-                  <div><img src="http://placehold.it/150/2c3e50" alt="" class="thumbnail"></div>
-                  <h4 class="thumbnail__caption">Red Hulk</h4>
+                  <div><img :src="`${characterData[0].thumbnail.path}.${characterData[0].thumbnail.extension}`" alt="" class="thumbnail"></div>
+                  <h4 class="thumbnail__caption">{{characterData[0].name}}</h4>
                 </div>
                 <div class="grid__item thumbnail-grid__item">
-                  <div><img src="http://placehold.it/150/2c3e50" alt="" class="thumbnail"></div>
-                  <h4 class="thumbnail__caption">Spider Girl</h4>
+                  <div><img :src="`${characterData[1].thumbnail.path}.${characterData[1].thumbnail.extension}`" alt="" class="thumbnail"></div>
+                  <h4 class="thumbnail__caption">{{characterData[1].name}}</h4>
                 </div>
                 <div class="grid__item thumbnail-grid__item">
-                  <div><img src="http://placehold.it/150/2c3e50" alt="" class="thumbnail"></div>
-                  <h4 class="thumbnail__caption">Spider Boy</h4>
+                  <div><img :src="`${characterData[2].thumbnail.path}.${characterData[2].thumbnail.extension}`" alt="" class="thumbnail"></div>
+                  <h4 class="thumbnail__caption">{{characterData[2].name}}</h4>
                 </div>
                 <div class="grid__item thumbnail-grid__item">
-                  <div><img src="http://placehold.it/150/2c3e50" alt="" class="thumbnail"></div>
-                  <h4 class="thumbnail__caption">Spider Man</h4>
+                  <div><img :src="`${characterData[3].thumbnail.path}.${characterData[3].thumbnail.extension}`" alt="" class="thumbnail"></div>
+                  <h4 class="thumbnail__caption">{{characterData[3].name}}</h4>
                 </div>
               </div>
               <h2 class="heading issues-heading">Issues</h2>
@@ -90,7 +90,7 @@ export default {
     return {
       seriesInfo: this.$select('seriesInfo'),
       characterData: this.$select('characterData'),
-      comicData: this.$select('comicData'),
+      issueData: this.$select('issueData'),
     };
   },
 
